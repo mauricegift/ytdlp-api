@@ -8,7 +8,7 @@ set -euo pipefail
 APP_DIR=/opt/ytdlp-api
 SERVICE=ytdlp-api
 DOMAIN=ytdlp.gifted.co.ke
-PORT=5000
+PORT=8888
 
 echo "=== [1/8] System update & dependencies ==="
 apt-get update -y

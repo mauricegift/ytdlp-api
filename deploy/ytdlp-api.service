@@ -8,7 +8,7 @@ Type=simple
 User=root
 WorkingDirectory=/opt/ytdlp-api
 Environment=PATH=/usr/local/bin:/usr/bin:/bin
-Environment=PORT=5000
+Environment=PORT=8888
 Environment=HOST=127.0.0.1
 Environment=CACHE_DIR=/tmp/ytdlp_cache
 Environment=CACHE_TTL=3600
@@ -17,7 +17,7 @@ ExecStart=/opt/ytdlp-api/venv/bin/gunicorn \
     --worker-class sync \
     --timeout 600 \
     --keep-alive 5 \
-    --bind 127.0.0.1:5000 \
+    --bind 127.0.0.1:8888 \
     --access-logfile /var/log/ytdlp-api/access.log \
     --error-logfile  /var/log/ytdlp-api/error.log \
     --log-level info \
