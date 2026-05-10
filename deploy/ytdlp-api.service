@@ -1,0 +1,31 @@
+[Unit]
+Description=yt-dlp YouTube Download API
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/ytdlp-api
+Environment=PATH=/usr/local/bin:/usr/bin:/bin
+Environment=PORT=5000
+Environment=HOST=127.0.0.1
+Environment=CACHE_DIR=/tmp/ytdlp_cache
+Environment=CACHE_TTL=3600
+ExecStart=/opt/ytdlp-api/venv/bin/gunicorn \
+    --workers 4 \
+    --worker-class sync \
+    --timeout 600 \
+    --keep-alive 5 \
+    --bind 127.0.0.1:5000 \
+    --access-logfile /var/log/ytdlp-api/access.log \
+    --error-logfile  /var/log/ytdlp-api/error.log \
+    --log-level info \
+    app:app
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.whl
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+
+# Environment & secrets
+.env
+*.env
+cookies.txt
+cookies.json
+
+# yt-dlp cache
+/tmp/ytdlp_cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Replit-specific (not for git)
+.replit
+replit.nix
+.cache/
+.local/
+node_modules/
+pnpm-lock.yaml
+pnpm-workspace.yaml
+package.json
+tsconfig*.json
+.npmrc
+.replitignore
+artifacts/
+scripts/
+lib/api-client-react/
+lib/api-spec/
+lib/api-zod/
+lib/db/
+
+# Deploy secrets
+deploy/*.key
+deploy/*.pem
